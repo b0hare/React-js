@@ -1,0 +1,15 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  padding: 20px;
+}
+
+.content{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
