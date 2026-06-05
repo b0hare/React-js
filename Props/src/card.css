@@ -1,0 +1,16 @@
+.Card{
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.Card img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+}
