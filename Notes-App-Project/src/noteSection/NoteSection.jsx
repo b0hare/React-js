@@ -15,6 +15,9 @@ function NoteSection() {
         notesCopy.push({title, details})
         setNotes(notesCopy)
         console.log(notes);
+        notes.forEach(note => {
+            console.log(note.title, note.details)
+        });
         
         setTitle('')
         setDetails('')
