@@ -3,6 +3,7 @@ import { faTrash, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react'
 import NoteSheet from './NoteSheet';
 import NoteStorage from './NoteStorage/NoteStorage';
+import {editNote, deleteNote, submitHandler} from '../../Utils/NotesFunctionalities';
 
 function NoteSection() {
 
@@ -10,28 +11,16 @@ function NoteSection() {
     const [details, setDetails] = useState("")
     const [notes, setNotes] = useState([])
 
-    const submitHandler = () => {
-        const notesCopy = [...notes];
-        notesCopy.push({title, details})
-        setNotes(notesCopy)
-        console.log(notes);
-        notes.forEach(note => {
-            console.log(note.title, note.details)
-        });
-        
-        setTitle('')
-        setDetails('')
-    }
-
+    
     return (
 
         <div className="noteSection w-full flex flex-col sm:flex-row items-center sm:items-start">
 
-            <NoteSheet title={title} setTitle={setTitle} details={details} setDetails={setDetails} submitHandler={submitHandler}/>
+            <NoteSheet notes={notes} title={title} setTitle={setTitle} details={details} setDetails={setDetails} setNotes={setNotes} submitHandler={submitHandler} />
 
             <span className='border-1 border-solid border-[#111] sm:h-100'></span>
 
-            <NoteStorage notes={notes}/>
+            <NoteStorage notes={notes} setTitle={setTitle} setDetails={setDetails} setNotes={setNotes} editNote={editNote} deleteNote={deleteNote}/>
 
         </div>
     )

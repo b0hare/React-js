@@ -1,11 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faPenNib} from '@fortawesome/free-solid-svg-icons';
 
-function Edit() {
+function Edit(props) {
     return (
         <FontAwesomeIcon className='cursor-pointer' icon={faPenNib} onClick={() => {
-            console.log('Editing..');
-
+            props.editNote(props.idx, props.setNotes, props.setTitle, props.setDetails, props.notes)
         }} />
     )
 }

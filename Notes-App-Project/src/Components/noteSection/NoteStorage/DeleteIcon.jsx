@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash} from '@fortawesome/free-solid-svg-icons';
-function Delete() {
+function Delete(props) {
     return (
         <FontAwesomeIcon className='cursor-pointer' icon={faTrash} onClick={() => {
-            console.log("Deleted!");
-            
+            props.deleteNote(props.idx, props.setNotes)
         }} />
     )
 }
