@@ -1,12 +1,13 @@
 import SavedNotes from "./SavedNotes"
 
 function NoteStorage(props) {
-
+    // const revNotes = [...props.notes].reverse();
+    const totalNotes = props.notes.length;
     return (
         <div className="noteStorage w-full h-full p-5 sm:w-1/2">
-            <h2 className='text-[24px] font-bold text-center w-full border-b-2 border-solid border-b-[#333333] p-[1px]'>Saved Notes</h2>
+            <h2 className='text-[24px] bg-[#5b31b4] rounded-md font-bold text-center w-full p-[1px]'>Saved Notes : {totalNotes}</h2>
 
-            <div className="notesContainer flex gap-2 justify-center flex-wrap">
+            <div className="notesContainer w-full h-100 flex gap-2 justify-center flex-wrap overflow-y-auto hide-scrollbar">
                 {
                     props.notes.map(function (elem, idx) {
                         return (
@@ -20,3 +21,4 @@ function NoteStorage(props) {
 }
 
 export default NoteStorage
+

@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 export const deleteNote = (idxToDelete, setNotes) => {
 
     setNotes(prevNotes => {
@@ -18,10 +20,16 @@ export const editNote = (idxToEdit, setNotes, setTitle, setDetails, notes) => {
 
 
 export const submitHandler = (title, details, setNotes, setTitle, setDetails, notes) => {
-    const notesCopy = [...notes];
-    notesCopy.push({ title, details })
-    setNotes(notesCopy)
+    if (title == "" && details == "") {
+        toast.error("Oops! This process requires some input.");
+    }
+    else {
+        const notesCopy = [...notes];
+        notesCopy.push({ title, details })
+        setNotes(notesCopy)
 
-    setTitle('')
-    setDetails('')
+        setTitle('')
+        setDetails('')
+    }
+
 }

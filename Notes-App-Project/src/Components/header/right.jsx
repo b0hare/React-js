@@ -1,6 +1,6 @@
 function Right() {
     return(
-        <h2 className="bg-[#5b31b4] rounded-md p-2 font-bold">Total: 12</h2>
+        <h2 className="bg-[#111] rounded-md p-2 font-bold cursor-pointer">Profile</h2>
     )
 }
 

@@ -14,7 +14,6 @@ function NoteSheet(props) {
         <form onSubmit={(e) => {
             e.preventDefault();
             props.submitHandler(props.title, props.details, props.setNotes, props.setTitle, props.setDetails, props.notes);
-            console.log("form submitted!");
 
             props.setTitle("")
             props.setDetails("")
